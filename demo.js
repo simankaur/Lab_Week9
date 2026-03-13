@@ -1,8 +1,34 @@
-from flask import Flask, jsonify, requests
+// Task 1: JSON Array
+{
+    document.addEventListener("DOMContentLoaded", function() {
+    // fetch() GET
+    fetch("https://huayan.pythonanywhere.com/animals")
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById("animalList");
+            data.forEach(fruit => {
+                list.innerHTML += "<li>" + fruit + "</li>";
+            });
+        });
+});
+}
 
-  app = Flask(__name__)
-# -- Task 1
-@app.route('/animals', methods=['GET'])
-def get_animals():
-    animals = ["Cat", "Dog", "Bird", "Fish", "Elephant", "Lion"]
-    return jsonify(animals)
+// Task 2: JSON Object
+function getStudentInfo(){
+    const inputName = document.getElementById("inputName").value;
+    // fetch() POST
+    fetch("https://huayan.pythonanywhere.com/studentInfo",{
+        method: "POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name:inputName})
+    })
+    .then(response => response.json())
+    .then(data =>{
+        document.getElementById("photo").src = data.photo;
+            document.getElementById("name").textContent = data.name;
+            document.getElementById("age").textContent = data.age;
+            document.getElementById("course").textContent = data.course;
+            document.getElementById("level").textContent = data.level;
+            document.getElementById("department").textContent = data.department;
+    });
+}
