@@ -2,7 +2,7 @@
 {
     document.addEventListener("DOMContentLoaded", function() {
     // fetch() GET
-    fetch("https://huayan.pythonanywhere.com/animals")
+    fetch("https://simsimma.pythonanywhere.com/animals")
         .then(response => response.json())
         .then(data => {
             const list = document.getElementById("animalList");
@@ -17,7 +17,7 @@
 function getStudentInfo(){
     const inputName = document.getElementById("inputName").value;
     // fetch() POST
-    fetch("https://huayan.pythonanywhere.com/studentInfo",{
+    fetch("https://simsimma.pythonanywhere.com/studentInfo",{
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({name:inputName})
