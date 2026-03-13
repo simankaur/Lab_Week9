@@ -2,7 +2,7 @@
 {
     document.addEventListener("DOMContentLoaded", function() {
     // fetch() GET
-    fetch("https://simsimma.pythonanywhere.com/animals")
+    fetch("https://aniyaaaa.pythonanywhere.com/fruit")
         .then(response => response.json())
         .then(data => {
             const list = document.getElementById("animalList");
